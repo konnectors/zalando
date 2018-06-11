@@ -32,7 +32,10 @@
     "travisDeployKey": "./bin/generate_travis_deploy_key"
   },
   "dependencies": {
-    "cozy-konnector-libs": "4.2.0"
+    "chalk": "2.4.1",
+    "cozy-konnector-libs": "4.2.0",
+    "escape-string-regexp": "1.0.5",
+    "pdfjs": "2.0.0-alpha.8"
   },
   "devDependencies": {
     "copy-webpack-plugin": "4.5.1",
