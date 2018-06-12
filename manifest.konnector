@@ -5,7 +5,7 @@
   "language": "node",
   "icon": "icon.png",
   "slug": "template",
-  "source": "git://github.com/konnectors/cozy-konnector-template.git",
+  "source": "git://github.com/konnectors/zalando.git",
   "editor": "Cozy",
   "vendor_link": "Link to the target website",
   "categories": ["other"],
@@ -26,7 +26,6 @@
   "data_types": [
     "bill"
   ],
-  "screenshots": [ "screenshots/screenshot1.png" ],
   "permissions": {
     "bank operations": {
       "type": "io.cozy.bank.operations"
