@@ -1,3 +1,7 @@
+process.env.SENTRY_DSN =
+  process.env.SENTRY_DSN ||
+  'https://2904ef901c69483cb239ba48032bf6aa:80397b80b5684446b79f9f083057979d@sentry.cozycloud.cc/77'
+
 const LOGIN_URL = 'https://www.zalando.fr/login/'
 const XSRF_COOKIE_NAME = 'frsx'
 
