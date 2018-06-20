@@ -12,7 +12,8 @@ const {
   saveBills,
   htmlToPDF,
   createCozyPDFDocument,
-  log
+  log,
+  errors: { LOGIN_FAILED }
 } = require('cozy-konnector-libs')
 const moment = require('moment')
 moment.locale('fr')
@@ -87,15 +88,16 @@ async function getXsrfToken() {
 
   const xsrfToken = getCookieValue(cookiesList, XSRF_COOKIE_NAME)
   if (!xsrfToken) {
-    throw new Error('XSRF cookie has no value')
+    log('error', 'XSFR token was not found in cookies')
+    throw new Error(LOGIN_FAILED)
   }
   return xsrfToken
 }
 
 async function generatePDF({ numero }) {
-  const url = `https://www.zalando.fr/moncompte/detail-commandes/imprimer/${numero}/`
+  const url = `${baseURL.origin}/moncompte/detail-commandes/imprimer/${numero}/`
   const doc = createCozyPDFDocument(
-    'Généré automatiquement par le connecteur Le Monde Diplomatique depuis la page',
+    'Généré automatiquement par le connecteur Zalando depuis la page',
     url
   )
   const $ = await request(url)
@@ -120,7 +122,7 @@ async function authenticate(username, password) {
 
   const isSigned = await signin(options)
   if (!isSigned) {
-    throw new Error('Unable to signin, check the username and/or the password')
+    throw new Error(LOGIN_FAILED)
   }
 }
 
@@ -151,8 +153,8 @@ function normalizePrice(text) {
   return parseFloat(/\d+,\d+/.exec(text)[0].replace(',', '.'))
 }
 
-function createFilename({ numero, amount }) {
-  return `${numero}-${amount}-EUR.pdf`
+function createFilename({ numero, amount, date }) {
+  return `${moment(date).format('YYYYMMDD')}-${numero}-${amount}-EUR.pdf`
 }
 
 function findCookie(cookies) {
