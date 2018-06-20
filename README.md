@@ -1,25 +1,22 @@
-[Cozy][cozy] <YOUR SUPER NEW KONNECTOR NAME>
-=======================================
+# [Cozy][cozy] zalando
 
-What's Cozy?
-------------
+## What's Cozy?
 
 ![Cozy Logo](https://cdn.rawgit.com/cozy/cozy-guidelines/master/templates/cozy_logo_small.svg)
 
 [Cozy] is a personal data platform that brings all your web services in the same private space. With it, your webapps and your devices can share data easily, providing you with a new experience. You can install Cozy on your own hardware where no one's tracking you.
 
-What is this konnector about ?
-------------------------------
+## What is this konnector about ?
 
-This konnector retrieves your <SOME DATA> and <SOME OTHER DATA> from <SERVICE>
-<YOUR DESCRIPTION HERE>
+This konnector retrieves your invoices from https://zalando.fr.
 
 ### Open a Pull-Request
 
 If you want to work on this konnector and submit code modifications, feel free to open pull-requests!
 </br>See :
-* the [contributing guide][contribute] for more information about how to properly open pull-requests.
-* the [konnectors development guide](https://docs.cozy.io/en/dev/konnector/)
+
+- the [contributing guide][contribute] for more information about how to properly open pull-requests.
+- the [konnectors development guide](https://docs.cozy.io/en/dev/konnector/)
 
 ### Run and test
 
@@ -31,12 +28,14 @@ Create a `konnector-dev-config.json` file at the root with your test credentials
   "fields": {"login":"zuck.m@rk.fb", "password":"123456"}
 }
 ```
+
 Then :
 
 ```sh
 yarn
 yarn standalone
 ```
+
 For running the konnector connected to a Cozy server and more details see [konnectors documentation](https://docs.cozy.io/en/dev/konnector/)
 
 ### Cozy-konnector-libs
@@ -45,8 +44,7 @@ This connector uses [cozy-konnector-libs](https://github.com/cozy/cozy-konnector
 
 ### Maintainer
 
-The lead maintainers for this konnector is <YOUR NAME>
-
+The lead maintainers for this konnector is @konnectors/maintainers
 
 ### Get in touch
 
@@ -58,11 +56,9 @@ You can reach the Cozy Community by:
 - Posting issues on the [Github repos][github]
 - Say Hi! on [Twitter]
 
+## License
 
-License
--------
-
-<YOUR KONNECTOR NAME> is developed by <your name> and distributed under the [AGPL v3 license][agpl-3.0].
+cozy-konnector-zalando is developed by @konnectors/maintainers and distributed under the [AGPL v3 license][agpl-3.0].
 
 [cozy]: https://cozy.io "Cozy Cloud"
 [agpl-3.0]: https://www.gnu.org/licenses/agpl-3.0.html
