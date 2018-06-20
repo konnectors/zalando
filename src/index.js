@@ -38,7 +38,8 @@ async function start(fields) {
   const documents = await parseDocuments($)
   log('info', 'Saving data to Cozy')
   await saveBills(documents, fields.folderPath, {
-    identifiers: ['zalando']
+    identifiers: ['zalando'],
+    contentType: 'application/pdf'
   })
 }
 
