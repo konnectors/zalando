@@ -5,7 +5,7 @@ env:
   global:
   - GH_USER_EMAIL="travis@example.org"
   - GH_USER_NAME="cozy-bot"
-  - DEPLOY_REPOSITORY="git@github.com:konnectors/cozy-konnector-template.git"
+  - DEPLOY_REPOSITORY="git@github.com:konnectors/zalando.git"
   - secure: EsAOwYVqyOkJvZVojstltvs90TnPfFL3KQFEqyvCqEmRU07kKpdbu2s6M+M+ygsizRwOuccqSdXCSPEqkvmSNWG9tn3nHBbPzzXpxx1uUqb++0DDeW/YVeTnPgpCePR1aUZnnOJHEM915A1y8q5U9eOfXUpLebKO5vMW0d8tPI4sYHkavdx/TOvX9rNevbbbZ3wWL1PawaLpIk2DCTKpC8+v7mMT42z4Yzlpn7RaXoxciDSFB4uxi85AfhvzghQY3/zbjpntw5/xA3jXl8vLdL4elwHzr6Vvwgjm73vf2uaBuZXnWSoxnOZitVGRQUTAlI6zrR/LkhfFKQSO5P0K+Too5WV7+6ZLzUvD2/wCVF67ZJPZnAUfAk40K6mWcQSNch5g1/K0BP++AtYpwuiEsiW2dvCtMH5e9/blcgfNa7hVQtmnwnBOYlxBGvsiLWC+UZIBFgayNNlDzRVcdOCgrs/AobdKYwtvOKD1EZZKxIMQpwN4LVX20GBvzbzIabigR9R87WyyKVAJnfhP6JCmwm030TUmISRkl4QLJJB00EdzntC/5b1aEgLm385OqiiXvsAvNd4M/PyiPHvlgBl0D8WgVM76GQwN7wTjq5GnNhO3Ut/07TXXj/TiHn+IBYohVSY0JwdUneEzCuSl0vMZBttqcF3kgnv/+qiN3ttPra4=
 cache:
   yarn: true
