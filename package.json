@@ -1,6 +1,6 @@
 {
   "name": "zalando",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "repository": {
     "type": "git",
@@ -32,10 +32,7 @@
     "travisDeployKey": "./bin/generate_travis_deploy_key"
   },
   "dependencies": {
-    "chalk": "2.4.1",
-    "cozy-konnector-libs": "4.5.4",
-    "escape-string-regexp": "1.0.5",
-    "pdfjs": "2.0.0"
+    "cozy-konnector-libs": "4.5.4"
   },
   "devDependencies": {
     "copy-webpack-plugin": "4.5.1",
