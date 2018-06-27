@@ -8,7 +8,7 @@
   "source": "git://github.com/konnectors/zalando.git",
   "editor": "Cozy",
   "vendor_link": "https://www.zalando.fr",
-  "categories": ["online_services"],
+  "categories": ["shopping"],
   "fields": {
     "login": {
       "type": "email"
