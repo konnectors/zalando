@@ -5,7 +5,7 @@
   "language": "node",
   "icon": "icon.jpg",
   "slug": "zalando",
-  "source": "git://github.com/konnectors/zalando.git",
+  "source": "git@github.com:konnectors/zalando.git",
   "editor": "Cozy",
   "vendor_link": "https://www.zalando.fr",
   "categories": [
