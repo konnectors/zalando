@@ -91,5 +91,6 @@
       }
     }
   },
+  "banksTransactionRegExp": "\\bzalando\\b",
   "manifest_version": "2"
 }
