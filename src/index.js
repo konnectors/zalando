@@ -118,12 +118,14 @@ async function authenticate(username, password) {
     username,
     password,
     url: `${baseURL.origin}/api/reef/login`,
-    validate: ({ body: { status } }) => status
+    validate: () => true
   }
 
-  const isSigned = await signin(options)
-  if (!isSigned) {
-    throw new Error(LOGIN_FAILED)
+  try {
+    await signin(options)
+  } catch (err) {
+    if (err.statusCode === 401) throw new Error(LOGIN_FAILED)
+    else throw err
   }
 }
 
