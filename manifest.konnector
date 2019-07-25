@@ -3,7 +3,7 @@
   "name": "Zalando",
   "type": "konnector",
   "language": "node",
-  "icon": "icon.jpg",
+  "icon": "icon.svg",
   "slug": "zalando",
   "source": "git@github.com:konnectors/zalando.git",
   "editor": "Cozy",
