@@ -1,9 +1,9 @@
 {
-  "version": "1.3.0",
+  "version": "1.2.1",
   "name": "Zalando",
   "type": "konnector",
   "language": "node",
-  "icon": "icon.jpg",
+  "icon": "icon.svg",
   "slug": "zalando",
   "source": "git@github.com:konnectors/zalando.git",
   "editor": "Cozy",
