@@ -3,8 +3,11 @@ node_js:
 - '12'
 env:
   global:
+  - MATTERMOST_CHANNEL=publication
   # REGISTRY_TOKEN(editor=cozy, app=zalando)
   - secure: EsAOwYVqyOkJvZVojstltvs90TnPfFL3KQFEqyvCqEmRU07kKpdbu2s6M+M+ygsizRwOuccqSdXCSPEqkvmSNWG9tn3nHBbPzzXpxx1uUqb++0DDeW/YVeTnPgpCePR1aUZnnOJHEM915A1y8q5U9eOfXUpLebKO5vMW0d8tPI4sYHkavdx/TOvX9rNevbbbZ3wWL1PawaLpIk2DCTKpC8+v7mMT42z4Yzlpn7RaXoxciDSFB4uxi85AfhvzghQY3/zbjpntw5/xA3jXl8vLdL4elwHzr6Vvwgjm73vf2uaBuZXnWSoxnOZitVGRQUTAlI6zrR/LkhfFKQSO5P0K+Too5WV7+6ZLzUvD2/wCVF67ZJPZnAUfAk40K6mWcQSNch5g1/K0BP++AtYpwuiEsiW2dvCtMH5e9/blcgfNa7hVQtmnwnBOYlxBGvsiLWC+UZIBFgayNNlDzRVcdOCgrs/AobdKYwtvOKD1EZZKxIMQpwN4LVX20GBvzbzIabigR9R87WyyKVAJnfhP6JCmwm030TUmISRkl4QLJJB00EdzntC/5b1aEgLm385OqiiXvsAvNd4M/PyiPHvlgBl0D8WgVM76GQwN7wTjq5GnNhO3Ut/07TXXj/TiHn+IBYohVSY0JwdUneEzCuSl0vMZBttqcF3kgnv/+qiN3ttPra4=
+  # MATTERMOST_HOOK_URL
+  - secure: j6+XL+TqyvtjerbJMI0OQZeMIOSDyB/QHuBmoTP6gLvVNHZrjBiFx6Spbwf7G/XQM/sucS8zPvCMfT+bNL/DVHH1xyuW9Y+dXlsCRgvlsjCdSqwejJo4HnfFLV+rAgBu9+DvSnxS67YfRo6rV2lKCL21E5QlrqkAlR/evY0/baofUDdlx6aNZRll2qFdHfq8b7hCpsb4dhsfd4/nTudfjm9Kvw9ZekQyEcjf/Z6K4TNVscIm3sPXtz/BjD+qwGFqvSfBYawmlbIQfLW+J/IgIsgHdCg0d+lj+ssP1WsPpWgGCCQpGp46mKmPSv8+WhVHHvfZHudrBKOTukkoYkmphnR6Ah3HYh8Jg/PsyKTUrelCBIjn2+fvL4E72o5sozRzQQFDL7lQ7Q3/gQwsEgVThC8cYUMTN8AhHtoKPw7wJmcsLOOVYqEHeykba9ylKFeLPHqhbx6KFQu1AFUGyvSCIuGIISXLBZr7j9wygoxKH46yhbD21IF5NTPLcwhcbveqLYWWgKiYKRLewXAW4aPTIyrzVwGXNnOo3eu2mqYT/DneCOA0WQVZgUkwz8v8BJkBIIXsHPHnB2jynSq6cos+NBZvH5YohExkuvTZbXX/M7HXsa7wZZxHp4fQyEcyD6JsGloMINlmC0Aw0Sjk/M8U3GdOZM/hdKRHFED49UlWWpw=
 cache:
   yarn: true
   directories:
@@ -24,7 +27,7 @@ deploy:
     branch: master
 - provider: script
   skip-cleanup: true
-  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish
+  script: DEPLOY_BRANCH=build yarn deploy && yarn cozyPublish --postpublish mattermost
   on:
     tags: true
 before_install:
