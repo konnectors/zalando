@@ -1,7 +1,3 @@
-process.env.SENTRY_DSN =
-  process.env.SENTRY_DSN ||
-  'https://2904ef901c69483cb239ba48032bf6aa:80397b80b5684446b79f9f083057979d@sentry.cozycloud.cc/77'
-
 const LOGIN_URL = 'https://www.zalando.fr/login/'
 const XSRF_COOKIE_NAME = 'frsx'
 
@@ -21,7 +17,8 @@ const URL = require('url').URL
 const jar = require('request').jar()
 const request = requestFactory({
   cheerio: true,
-  jar
+  jar,
+  debug: true
 })
 
 const baseURL = new URL('https://www.zalando.fr')
@@ -82,7 +79,13 @@ async function getXsrfToken() {
     jar,
     method: 'GET',
     url: LOGIN_URL,
-    resolveWithFullResponse: true
+    headers: {
+      Accept: '*/*',
+//      Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+      //      'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:97.0) Gecko/20100101 Firefox/97.0'
+      'User-Agent': 'curl/7.68.0'
+    }
+//    resolveWithFullResponse: true
   })
 
   const cookiesList = jar.getCookies(LOGIN_URL)
